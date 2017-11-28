@@ -1,7 +1,7 @@
 '''
 Snake game.
 Authors:
-<insert the names of your teammates here>
+<Deandra Harvin, Darius Baugh, Carlos Slaughter>
 '''
 
 import pygame
@@ -257,3 +257,6 @@ def start_game():
 
 # Start the snake game.
 start_game()
+
+#Changes:
+# Add authors
