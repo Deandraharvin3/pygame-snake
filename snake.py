@@ -81,8 +81,10 @@ def snake_ran_out_of_bounds(snake):
     snake - list of 2-tuples representing the positions of each snake segment
     Note that the grid is GRID_WIDTH cells wide and GRID_HEIGHT cells high.
     """
-    if snake[0][0] in [0, GRID_WIDTH] or snake[0][1] in [0, GRID_HEIGHT]:      
-            return True
+    if snake[0][0] < 0 or snake[0][0] > GRID_WIDTH - 1:
+        return True
+    elif snake[0][1] < 0 or snake[0][1] >  GRID_HEIGHT - 1:      
+        return True
     return False
 
 def snake_intersected_body(snake):
@@ -109,8 +111,7 @@ def get_game_over_text(score):
     This text should contain 'Game Over' as well as the score.
     score - integer representing the current score of the game.
     """
-    
-    return 'Game Over. Score: ' + str(score - 10)
+    return 'Game Over. Score: ' + str(score)
 
 def get_snake_speed(snake):
     """Return the number of cells the snake should travel in one second.
@@ -121,7 +122,7 @@ def get_snake_speed(snake):
     speed = 5
     length = 15
     if len(snake) == length:
-        speed += 10
+        speed += 5
         length += 10
     return speed
 
