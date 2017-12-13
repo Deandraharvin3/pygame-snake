@@ -125,9 +125,11 @@ def get_snake_speed(snake):
     """
     speed = 5
     length = 15
-    if len(snake) == length:
-        speed += 5
-        length += 10
+    for body in range(len(snake)):
+        if body == length:
+            speed += 5
+            length += 10
+            return speed
     return speed
 
 def move_snake(snake, direction, food):
